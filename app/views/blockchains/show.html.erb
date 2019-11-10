@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chain:</strong>
+  <%= @blockchain.chain %>
+</p>
+
+<p>
+  <strong>Pool:</strong>
+  <%= @blockchain.pool %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @blockchain.address %>
+</p>
+
+<%= link_to 'Edit', edit_blockchain_path(@blockchain) %> |
+<%= link_to 'Back', blockchains_path %>
