@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_092354) do
+ActiveRecord::Schema.define(version: 2019_11_10_101439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,24 @@ ActiveRecord::Schema.define(version: 2019_11_10_092354) do
   create_table "blockchains", force: :cascade do |t|
     t.string "chain"
     t.string "pool"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "priv_key"
+    t.string "pub_key"
+    t.string "sender_address"
+    t.string "recipient_address"
+    t.float "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wallets", force: :cascade do |t|
+    t.string "priv_key"
+    t.string "pub_key"
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
